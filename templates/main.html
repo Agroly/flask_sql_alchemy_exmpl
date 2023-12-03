@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+</head>
+<body>
+<h2>Messages</h2>
+<form method="post" action="/add_message">
+    <input type="text" name="text">
+    <input type="text" name="tag">
+    <button type="submit">Add message</button>
+</form>
+
+<h3>Messages list</h3>
+{% for item in messages_with_tags %}
+<div>
+    <p>Message: {{ item.message }}</p>
+    <p>Tag: {{ item.tag }}</p>
+</div>
+{% endfor %}
+
+</body>
+</html>
